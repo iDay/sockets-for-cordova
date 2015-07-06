@@ -49,7 +49,7 @@ Socket.prototype.open = function (host, port, success, error) {
                 _that.onError(payload.errorMessage);
                 break;
             default:
-                console.error("SocketsForCordova: Unknown event type " + payload.type + ", socket key: " + payload.socketKey);
+                console.error("SocketsForCordova: Unknown event type " + payload.type + ", socket key: " + (typeof(payload.socketKey) != "undefined") ? payload.socketKey : "none");
                 break;
         }
     }
