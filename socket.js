@@ -32,7 +32,7 @@ Socket.prototype.open = function (host, port, success, error) {
 
         var payload = event.payload;
 
-        if (payload.socketKey !== _that.socketKey) {
+        if (typeof(payload.socketKey) == "undefined" || payload.socketKey !== _that.socketKey) {
             return;
         }
 
